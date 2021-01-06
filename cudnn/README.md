@@ -1,0 +1,1 @@
+For building the docker image it is required to include inside this directory a copy of the DEB package of the cuDNN runtime library version 7.6.0 for CUDA 10 (i.e., a copy of the file `libcudnn7_7.6.0.64-1+cuda10.0_amd64.deb`).
