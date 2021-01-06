@@ -1,0 +1,4 @@
+references/2016_Inkyu__deepFruits_a_fruit_detection_system_using_dnn.pdf filter=lfs diff=lfs merge=lfs -text
+references/2017_Bargoti__deep_fruit_detection_in_orchards.pdf filter=lfs diff=lfs merge=lfs -text
+references/2018_Halstead__fruit_quantity_and_quality_estimation_using_a_robotic_vision_system.pdf filter=lfs diff=lfs merge=lfs -text
+references/2020_Halstead__fruit_detection_in_the_wild.pdf filter=lfs diff=lfs merge=lfs -text
