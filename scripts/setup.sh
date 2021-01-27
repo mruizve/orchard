@@ -7,7 +7,7 @@ if [ ! -z "$whereami" ]; then
 fi
 
 export myimage="mruizve/orchard:latest"
-export myhost="orchard-demo-container"
+export myhost="orchard"
 export myuser="demo"
 export mygroup="users"
 export mysteupdir="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)/.."
