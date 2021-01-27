@@ -47,7 +47,6 @@ RUN mygid=$(awk -F\: '/users/ {print $3}' /etc/group); \
 
 # copy all the stuff
 ARG mytarget=/tmp/orchard
-ADD dataset ${mytarget}/dataset
 ADD weights ${mytarget}/weights
 ADD Mask_RCNN ${mytarget}/Mask_RCNN
 ADD scripts ${mytarget}/scripts
@@ -57,7 +56,7 @@ ADD setup.py ${mytarget}/setup.py
 
 # extract dataset, install dependencies and install the orchard package
 RUN chown -R ${myuser}:${mygroup} ${mytarget} || exit 1; \
-    sudo -H -u ${myuser} ${mytarget}/dataset/download_acfr_dataset.sh || exit 1; \
+    sudo -H -u ${myuser} ${mytarget}/scripts/download_acfr_dataset.sh || exit 1; \
     sudo -H -u ${myuser} ${mytarget}/scripts/install.sh || exit 1
 
 # apt-get and /tmp clean-up
