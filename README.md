@@ -65,7 +65,7 @@ However, it is worth noticing that a proper training session requires tuning som
 #### Running the notebooks
 The second alternative for running the demo is to start Jupyter inside the container and to execute the notebooks available at the `samples` directory:
 ```
-orchar_jupyter
+orchard_jupyter
 ```
 This will output a message similar to this one:
 ```
