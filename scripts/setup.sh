@@ -6,7 +6,7 @@ if [ ! -z "$whereami" ]; then
   return
 fi
 
-export myimage="orchard-demo-image:latest"
+export myimage="mruizve/orchard:latest"
 export myhost="orchard-demo-container"
 export myuser="demo"
 export mygroup="users"
