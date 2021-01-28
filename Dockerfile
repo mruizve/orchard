@@ -51,7 +51,7 @@ ADD weights ${mytarget}/weights
 ADD Mask_RCNN ${mytarget}/Mask_RCNN
 ADD scripts ${mytarget}/scripts
 ADD orchard ${mytarget}/orchard
-ADD orchard ${mytarget}/samples
+ADD samples ${mytarget}/samples
 ADD setup.py ${mytarget}/setup.py
 
 # extract dataset, install dependencies and install the orchard package
