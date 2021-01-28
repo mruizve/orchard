@@ -8,7 +8,7 @@ import mrcnn.utils
 
 class OrchardDataset(mrcnn.utils.Dataset):
     def load(self, dataset_path, fruit, subset):
-        # dtataset structure:
+        # dataset structure:
         # + root
         # |-+ fruit
         # | |-+ annotations
