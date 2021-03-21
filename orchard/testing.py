@@ -48,7 +48,7 @@ if __name__ == '__main__':
 
     # Testing dataset
     dataset_test = orchard.dataset.OrchardDataset()
-    dataset_test.load(orchard.config.OrchardConfig.DATASET_PATH, options.fruit, 'test')
+    dataset_test.load(orchard.config.OrchardConfig.ORCHARD_DATASET_PATH, options.fruit, 'test')
     dataset_test.prepare()
 
     testing(dataset_test, options.testing_weights)

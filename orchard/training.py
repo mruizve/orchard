@@ -99,19 +99,19 @@ if __name__ == '__main__':
     if not options.skip_training:
         # Training dataset
         dataset_train = orchard.dataset.OrchardDataset()
-        dataset_train.load(orchard.config.OrchardConfig.DATASET_PATH, options.fruit, 'train')
+        dataset_train.load(orchard.config.OrchardConfig.ORCHARD_DATASET_PATH, options.fruit, 'train')
         dataset_train.prepare()
 
     if not options.skip_training or not options.skip_validation:
         # Validation dataset
         dataset_val = orchard.dataset.OrchardDataset()
-        dataset_val.load(orchard.config.OrchardConfig.DATASET_PATH, options.fruit, 'val')
+        dataset_val.load(orchard.config.OrchardConfig.ORCHARD_DATASET_PATH, options.fruit, 'val')
         dataset_val.prepare()
 
     if not options.skip_validation:
         # Testing dataset
         dataset_test = orchard.dataset.OrchardDataset()
-        dataset_test.load(orchard.config.OrchardConfig.DATASET_PATH, options.fruit, 'test')
+        dataset_test.load(orchard.config.OrchardConfig.ORCHARD_DATASET_PATH, options.fruit, 'test')
         dataset_test.prepare()
 
     # Training and validation

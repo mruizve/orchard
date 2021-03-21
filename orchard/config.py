@@ -15,12 +15,18 @@ class OrchardConfig(mrcnn.config.Config):
     EPOCHS_HEAD = 1
     EPOCHS_ALL = 2
 
-    # Custom data paths
+    # Custom data paths -- logs
     LOGS_PATH = os.path.join(os.path.expanduser('~'), 'logs')
-    DATASET_PATH = os.path.join(os.path.expanduser('~'), 'dataset')
+
+    # Custom data paths -- datasets
+    ORCHARD_DATASET_PATH = os.path.join(os.path.expanduser('~'), 'datasets', 'orchard')
+    PATHOLOGY_DATASET_PATH = os.path.join(os.path.expanduser('~'), 'datasets', 'pathology')
+
+    # Custom data paths -- weights
     WEIGHTS_PATH = os.path.join(os.path.expanduser('~'), 'weights')
     COCO_WEIGHTS_PATH = os.path.join(WEIGHTS_PATH, 'mask_rcnn_coco.h5')
     ORCHARD_WEIGHTS_PATH = os.path.join(WEIGHTS_PATH, 'mask_rcnn_orchard.h5')
+    PATHOLOGY_WEIGHTS_PATH = os.path.join(WEIGHTS_PATH, 'efficientnetb7_pathology.h5')
 
 
 class TrainingConfig(OrchardConfig):
