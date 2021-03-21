@@ -37,6 +37,10 @@ RUN DEBIAN_FRONTEND=noninteractive apt-fast install -y --no-install-recommends -
 ADD cudnn/libcudnn7_7.6.0.64-1+cuda10.0_amd64.deb /tmp/cudnn.deb
 RUN dpkg -i /tmp/cudnn.deb || exit 1
 
+# copy datasets
+ADD datasets/acfr-fruit-dataset.zip /tmp/acfr-fruit-dataset.zip
+ADD datasets/plant-pathology-2020-fgvc7.zip /tmp/plant-pathology-2020-fgvc7.zip
+
 # setup demo user and home permissions
 ARG myuser
 ARG mygroup
@@ -54,10 +58,10 @@ ADD orchard ${mytarget}/orchard
 ADD samples ${mytarget}/samples
 ADD setup.py ${mytarget}/setup.py
 
-# extract dataset, install dependencies and install the orchard package
-RUN chown -R ${myuser}:${mygroup} ${mytarget} || exit 1; \
-    sudo -H -u ${myuser} ${mytarget}/scripts/download_acfr_dataset.sh || exit 1; \
-    sudo -H -u ${myuser} ${mytarget}/scripts/install.sh || exit 1
+# extract datasets, install dependencies and install the orchard package
+RUN chown -R ${myuser}:${mygroup} ${mytarget} || exit 1
+RUN sudo -H -u ${myuser} ${mytarget}/scripts/install_datasets.sh || exit 1
+RUN sudo -H -u ${myuser} ${mytarget}/scripts/install.sh || exit 1
 
 # apt-get and /tmp clean-up
 RUN rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/* /tmp/*

@@ -5,12 +5,10 @@ if ! command -v axel &> /dev/null; then
   exit 1
 fi
 
-DST="/tmp/acfr-multifruit-2016.zip"
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)/.."
+DST="${DIR}/dataset/acfr-fruit-dataset.zip"
 URL="https://data.acfr.usyd.edu.au/ag/treecrops/2016-multifruit/acfr-multifruit-2016.zip"
 
-echo -e "downloading the ACFR dataset... "
+echo -n "downloading the ACFR dataset... "
 axel -n 20 --insecure -o "${DST}" "${URL}" > /dev/null
-echo "done"
-
-unzip -d /tmp "${DST}" >/dev/null || exit 1
-mv /tmp/acfr-fruit-dataset ~/dataset || exit 1
+echo "done!"
