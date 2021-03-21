@@ -16,7 +16,7 @@
   sudo -H pip3 install -r requirements.txt
 
   # Install orchard dependencies
-  sudo -H pip3 install pycocotools efficientnet
+  sudo -H pip3 install pycocotools efficientnet sklearn
   sudo -H pip3 install .
 
   # Apply Keras patches (TO DO: shall these patches be part of this repository instead of the Mask_RCNN one?)
